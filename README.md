@@ -7,6 +7,7 @@ Techniques used: CTEs, window functions (`RANK`, `DENSE_RANK`, `LAG`, running to
 | Case study | Topic | Status |
 |---|---|---|
 | [Danny's Diner](danny-diner/) | Customer behaviour and loyalty points | Done: 10 questions plus 2 bonus |
+| [Pizza Runner](pizza-runner/) | Data cleaning, delivery operations, ingredients and pricing | Done: 30 questions across 5 sections |
 
 ## Conventions
 
