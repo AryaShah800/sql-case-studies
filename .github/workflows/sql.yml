@@ -1,0 +1,30 @@
+name: sql-on-postgres
+on: [push, pull_request]
+jobs:
+  run-solutions:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: {POSTGRES_PASSWORD: postgres}
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run every case study (schema then solution) on PostgreSQL 16
+        run: |
+          set -e
+          for d in */; do
+            [ -f "$d/schema.sql" ] || continue
+            study=${d%/}
+            psql -c "DROP DATABASE IF EXISTS $(echo $study | tr - _)" -d postgres
+            psql -c "CREATE DATABASE $(echo $study | tr - _)" -d postgres
+            echo "== $study"
+            psql -v ON_ERROR_STOP=1 -q -d "$(echo $study | tr - _)" -f "$d/schema.sql"
+            psql -v ON_ERROR_STOP=1 -q -d "$(echo $study | tr - _)" -f "$d/solution.sql" > /dev/null
+          done
