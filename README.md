@@ -12,9 +12,13 @@ Techniques used: CTEs, window functions (`RANK`, `DENSE_RANK`, `ROW_NUMBER`), `C
 | [Pizza Runner](pizza-runner/) | Data cleaning, delivery operations, ingredients and pricing | Done: 30 questions across 5 sections |
 | [Foodie-Fi](foodie-fi/) | Subscription plans, churn and upgrades | Done: sections A, B, C (payments); D as discussion |
 | [Data Bank](data-bank/) | Nodes, transactions and data allocation | Done: sections A to D; slide not made |
+| [Data Mart](data-mart/) | Cleansing and before/after analysis of a packaging change | Done: sections 1 to 4 |
+| Clique Bait (6) | Digital funnel analysis | Not included: the dataset is only available through a JavaScript DB Fiddle that could not be extracted reliably |
+| [Balanced Tree](balanced-tree/) | Sales, products and a reusable monthly report | Done: all sections plus bonus |
+| [Fresh Segments](fresh-segments/) | Interest metrics and index analysis | Done: sections A to D |
 
 ## Data
-Small schemas from the case study pages are included where the data is small enough to share (Danny's Diner, Pizza Runner). Foodie-Fi (`foodie-fi/schema.sql`, 2,650 rows) was exported from the official fiddle and is solved. Data Bank (428 KB of rows) is included too, with the same credit to Danny Ma, so every study reproduces from this repo. The Pizza Runner ratings table is made up by the exercise's own design.
+Small schemas from the case study pages are included where the data is small enough to share (Danny's Diner, Pizza Runner). Data Mart, Balanced Tree and Fresh Segments are the official schema SQL, extracted unchanged. Foodie-Fi (`foodie-fi/schema.sql`, 2,650 rows) was exported from the official fiddle and is solved. Data Bank (428 KB of rows) is included too, with the same credit to Danny Ma, so every study reproduces from this repo. The Pizza Runner ratings table is made up by the exercise's own design.
 
 ## Approach
 Read the question, state assumptions at the top of `solution.sql`, write the query, check the result by hand on the small data, then write one business insight from the output.
@@ -26,7 +30,7 @@ Each case study README lists its insights, one per question (see the table above
 None. This repo is SQL only.
 
 ## Reproduce
-CI (`.github/workflows/sql.yml`) runs every `schema.sql` then `solution.sql` on a PostgreSQL 16 service container on each push.
+CI (`.github/workflows/sql.yml`) runs `./check.sh` on a PostgreSQL 16 service container on each push: every `schema.sql` then `solution.sql`, and the query output is diffed against that case study's `expected_output.txt`. Run the same check locally with `./check.sh` (needs `psql` and the usual `PG*` variables); `./check.sh --update` regenerates the expected files, which should then be reviewed. The expected files pin the current output (spot-checked by hand, and the Fresh Segments D4 result matches the sample on the case page), so they catch regressions rather than prove correctness.
 
 Create a PostgreSQL 18 database, run `<case-study>/schema.sql`, then `<case-study>/solution.sql`.
 
