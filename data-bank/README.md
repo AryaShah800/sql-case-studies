@@ -7,7 +7,7 @@
 ## Data
 `schema.sql` is the Schema SQL from the official DB Fiddle embedded on https://8weeksqlchallenge.com/case-study-4/ (Danny Ma), extracted by script. Checked after loading: 5 regions, 3,500 `customer_nodes` rows, 5,868 `customer_transactions` rows, 500 customers, transaction dates 2020-01-01 to 2020-04-28.
 
-Not committed: `schema.sql` is git-ignored because the 428 KB dataset belongs to Danny Ma. To reproduce, open the case study page, click "Edit on DB Fiddle" and copy the Schema SQL panel into `data-bank/schema.sql`.
+`schema.sql` is committed in this repo (same credit to Danny Ma as the other case studies).
 
 ## How to run
 `psql -f schema.sql` then `psql -f solution.sql`. Assumptions (floored allocations, `9999-12-31` end dates, sign of transactions) are at the top of `solution.sql`.

@@ -1,0 +1,174 @@
+ total_qty | revenue_before_discount | total_discount 
+-----------+-------------------------+----------------
+     45216 |                 1289453 |      156229.14
+(1 row)
+
+ unique_txns 
+-------------
+        2500
+(1 row)
+
+ avg_unique_products 
+---------------------
+                6.04
+(1 row)
+
+  p25   |  p50  | p75 
+--------+-------+-----
+ 375.75 | 509.5 | 647
+(1 row)
+
+ avg_discount_per_txn 
+----------------------
+                62.49
+(1 row)
+
+  customer  | txns | pct_txns 
+------------+------+----------
+ member     | 1505 |    60.20
+ non-member |  995 |    39.80
+(2 rows)
+
+  customer  | avg_revenue_per_txn 
+------------+---------------------
+ member     |              516.27
+ non-member |              515.04
+(2 rows)
+
+         product_name         | revenue 
+------------------------------+---------
+ Blue Polo Shirt - Mens       |  217683
+ Grey Fashion Jacket - Womens |  209304
+ White Tee Shirt - Mens       |  152000
+(3 rows)
+
+ segment_name |  qty  | revenue | discount 
+--------------+-------+---------+----------
+ Jacket       | 11385 |  366983 | 44277.46
+ Jeans        | 11349 |  208350 | 25343.97
+ Shirt        | 11265 |  406143 | 49594.27
+ Socks        | 11217 |  307977 | 37013.44
+(4 rows)
+
+ segment_name |         product_name          | qty  
+--------------+-------------------------------+------
+ Jacket       | Grey Fashion Jacket - Womens  | 3876
+ Jeans        | Navy Oversized Jeans - Womens | 3856
+ Shirt        | Blue Polo Shirt - Mens        | 3819
+ Socks        | Navy Solid Socks - Mens       | 3792
+(4 rows)
+
+ category_name |  qty  | revenue | discount 
+---------------+-------+---------+----------
+ Mens          | 22482 |  714120 | 86607.71
+ Womens        | 22734 |  575333 | 69621.43
+(2 rows)
+
+ category_name |         product_name         | qty  
+---------------+------------------------------+------
+ Mens          | Blue Polo Shirt - Mens       | 3819
+ Womens        | Grey Fashion Jacket - Womens | 3876
+(2 rows)
+
+ segment_name |           product_name           | revenue | pct_of_segment 
+--------------+----------------------------------+---------+----------------
+ Jacket       | Grey Fashion Jacket - Womens     |  209304 |          57.03
+ Jacket       | Khaki Suit Jacket - Womens       |   86296 |          23.51
+ Jacket       | Indigo Rain Jacket - Womens      |   71383 |          19.45
+ Jeans        | Black Straight Jeans - Womens    |  121152 |          58.15
+ Jeans        | Navy Oversized Jeans - Womens    |   50128 |          24.06
+ Jeans        | Cream Relaxed Jeans - Womens     |   37070 |          17.79
+ Shirt        | Blue Polo Shirt - Mens           |  217683 |          53.60
+ Shirt        | White Tee Shirt - Mens           |  152000 |          37.43
+ Shirt        | Teal Button Up Shirt - Mens      |   36460 |           8.98
+ Socks        | Navy Solid Socks - Mens          |  136512 |          44.33
+ Socks        | Pink Fluro Polkadot Socks - Mens |  109330 |          35.50
+ Socks        | White Striped Socks - Mens       |   62135 |          20.18
+(12 rows)
+
+ category_name | segment_name | revenue | pct_of_category 
+---------------+--------------+---------+-----------------
+ Mens          | Shirt        |  406143 |           56.87
+ Mens          | Socks        |  307977 |           43.13
+ Womens        | Jacket       |  366983 |           63.79
+ Womens        | Jeans        |  208350 |           36.21
+(4 rows)
+
+ category_name | revenue | pct_of_total 
+---------------+---------+--------------
+ Mens          |  714120 |        55.38
+ Womens        |  575333 |        44.62
+(2 rows)
+
+           product_name           | txns_with_product | penetration_pct 
+----------------------------------+-------------------+-----------------
+ Navy Solid Socks - Mens          |              1281 |           51.24
+ Grey Fashion Jacket - Womens     |              1275 |           51.00
+ Navy Oversized Jeans - Womens    |              1274 |           50.96
+ Blue Polo Shirt - Mens           |              1268 |           50.72
+ White Tee Shirt - Mens           |              1268 |           50.72
+ Pink Fluro Polkadot Socks - Mens |              1258 |           50.32
+ Indigo Rain Jacket - Womens      |              1250 |           50.00
+ Khaki Suit Jacket - Womens       |              1247 |           49.88
+ Black Straight Jeans - Womens    |              1246 |           49.84
+ Cream Relaxed Jeans - Womens     |              1243 |           49.72
+ White Striped Socks - Mens       |              1243 |           49.72
+ Teal Button Up Shirt - Mens      |              1242 |           49.68
+(12 rows)
+
+          product_1          |           product_2           |          product_3          | txns 
+-----------------------------+-------------------------------+-----------------------------+------
+ White Tee Shirt - Mens      | Grey Fashion Jacket - Womens  | Teal Button Up Shirt - Mens |  352
+ Indigo Rain Jacket - Womens | Black Straight Jeans - Womens | Navy Solid Socks - Mens     |  349
+ Blue Polo Shirt - Mens      | Grey Fashion Jacket - Womens  | Teal Button Up Shirt - Mens |  347
+(3 rows)
+
+ question |             metric             |  value   
+----------+--------------------------------+----------
+ H1       | total quantity                 |    14788
+ H2       | revenue before discount        |   420672
+ H3       | total discount                 | 51589.10
+ T1       | unique transactions            |      828
+ T2       | avg unique products per txn    |     5.99
+ T3       | p25 revenue per txn            |      359
+ T3       | p50 revenue per txn            |    496.5
+ T3       | p75 revenue per txn            |   645.25
+ T4       | avg discount per txn           |    62.31
+ T5       | member txn share %             |    59.42
+ T6       | avg revenue per member txn     |   515.93
+ T6       | avg revenue per non-member txn |   496.53
+(12 rows)
+
+ question |             metric             |  value   
+----------+--------------------------------+----------
+ H1       | total quantity                 |    14820
+ H2       | revenue before discount        |   421554
+ H3       | total discount                 | 51661.37
+ T1       | unique transactions            |      812
+ T2       | avg unique products per txn    |     6.08
+ T3       | p25 revenue per txn            |      375
+ T3       | p50 revenue per txn            |      511
+ T3       | p75 revenue per txn            |   644.25
+ T4       | avg discount per txn           |    63.62
+ T5       | member txn share %             |    61.95
+ T6       | avg revenue per member txn     |   517.61
+ T6       | avg revenue per non-member txn |   521.67
+(12 rows)
+
+ category_name | qty  | revenue | discount | pct_of_revenue 
+---------------+------+---------+----------+----------------
+ Mens          | 7261 |  230245 | 28235.04 |          54.73
+ Womens        | 7527 |  190427 | 23354.06 |          45.27
+(2 rows)
+
+ category_name | qty  | revenue | discount | pct_of_revenue 
+---------------+------+---------+----------+----------------
+ Mens          | 7372 |  233245 | 28352.29 |          55.33
+ Womens        | 7448 |  188309 | 23309.08 |          44.67
+(2 rows)
+
+ rebuilt_rows | only_in_rebuilt | only_in_shipped 
+--------------+-----------------+-----------------
+           12 |               0 |               0
+(1 row)
+

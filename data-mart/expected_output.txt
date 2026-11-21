@@ -1,0 +1,176 @@
+ rows_clean | rows_raw | null_rows 
+------------+----------+-----------
+      17117 |    17117 |         0
+(1 row)
+
+ weekday 
+---------
+ Monday
+(1 row)
+
+ from_week | to_week | weeks 
+-----------+---------+-------
+         1 |      11 |    11
+        37 |      52 |    16
+(2 rows)
+
+ calendar_year | total_transactions 
+---------------+--------------------
+          2018 |          346406460
+          2019 |          365639285
+          2020 |          375813651
+(3 rows)
+
+    region     | month_number | total_sales 
+---------------+--------------+-------------
+ AFRICA        |            3 |   567767480
+ AFRICA        |            4 |  1911783504
+ AFRICA        |            5 |  1647244738
+ AFRICA        |            6 |  1767559760
+ AFRICA        |            7 |  1960219710
+ AFRICA        |            8 |  1809596890
+ AFRICA        |            9 |   276320987
+ ASIA          |            3 |   529770793
+ ASIA          |            4 |  1804628707
+ ASIA          |            5 |  1526285399
+ ASIA          |            6 |  1619482889
+ ASIA          |            7 |  1768844756
+ ASIA          |            8 |  1663320609
+ ASIA          |            9 |   252836807
+ CANADA        |            3 |   144634329
+ CANADA        |            4 |   484552594
+ CANADA        |            5 |   412378365
+ CANADA        |            6 |   443846698
+ CANADA        |            7 |   477134947
+ CANADA        |            8 |   447073019
+ CANADA        |            9 |    69067959
+ EUROPE        |            3 |    35337093
+ EUROPE        |            4 |   127334255
+ EUROPE        |            5 |   109338389
+ EUROPE        |            6 |   122813826
+ EUROPE        |            7 |   136757466
+ EUROPE        |            8 |   122102995
+ EUROPE        |            9 |    18877433
+ OCEANIA       |            3 |   783282888
+ OCEANIA       |            4 |  2599767620
+ OCEANIA       |            5 |  2215657304
+ OCEANIA       |            6 |  2371884744
+ OCEANIA       |            7 |  2563459400
+ OCEANIA       |            8 |  2432313652
+ OCEANIA       |            9 |   372465518
+ SOUTH AMERICA |            3 |    71023109
+ SOUTH AMERICA |            4 |   238451531
+ SOUTH AMERICA |            5 |   201391809
+ SOUTH AMERICA |            6 |   218247455
+ SOUTH AMERICA |            7 |   235582776
+ SOUTH AMERICA |            8 |   221166052
+ SOUTH AMERICA |            9 |    34175583
+ USA           |            3 |   225353043
+ USA           |            4 |   759786323
+ USA           |            5 |   655967121
+ USA           |            6 |   703878990
+ USA           |            7 |   760331754
+ USA           |            8 |   712002790
+ USA           |            9 |   110532368
+(49 rows)
+
+ platform | total_transactions 
+----------+--------------------
+ Retail   |         1081934227
+ Shopify  |            5925169
+(2 rows)
+
+ calendar_year | month_number | retail_pct | shopify_pct 
+---------------+--------------+------------+-------------
+          2018 |            3 |      97.92 |        2.08
+          2018 |            4 |      97.93 |        2.07
+          2018 |            5 |      97.73 |        2.27
+          2018 |            6 |      97.76 |        2.24
+          2018 |            7 |      97.75 |        2.25
+          2018 |            8 |      97.71 |        2.29
+          2018 |            9 |      97.68 |        2.32
+          2019 |            3 |      97.71 |        2.29
+          2019 |            4 |      97.80 |        2.20
+          2019 |            5 |      97.52 |        2.48
+          2019 |            6 |      97.42 |        2.58
+          2019 |            7 |      97.35 |        2.65
+          2019 |            8 |      97.21 |        2.79
+          2019 |            9 |      97.09 |        2.91
+          2020 |            3 |      97.30 |        2.70
+          2020 |            4 |      96.96 |        3.04
+          2020 |            5 |      96.71 |        3.29
+          2020 |            6 |      96.80 |        3.20
+          2020 |            7 |      96.67 |        3.33
+          2020 |            8 |      96.51 |        3.49
+(20 rows)
+
+ calendar_year | demographic | pct_of_year 
+---------------+-------------+-------------
+          2018 | Couples     |       26.38
+          2018 | Families    |       31.99
+          2018 | unknown     |       41.63
+          2019 | Couples     |       27.28
+          2019 | Families    |       32.47
+          2019 | unknown     |       40.25
+          2020 | Couples     |       28.72
+          2020 | Families    |       32.73
+          2020 | unknown     |       38.55
+(9 rows)
+
+   age_band   | demographic | retail_sales | pct_of_retail 
+--------------+-------------+--------------+---------------
+ unknown      | unknown     |  16067285533 |         40.52
+ Retirees     | Families    |   6634686916 |         16.73
+ Retirees     | Couples     |   6370580014 |         16.07
+ Middle Aged  | Families    |   4354091554 |         10.98
+ Young Adults | Couples     |   2602922797 |          6.56
+ Middle Aged  | Couples     |   1854160330 |          4.68
+ Young Adults | Families    |   1770889293 |          4.47
+(7 rows)
+
+ calendar_year | platform | avg_of_row_averages | true_avg_transaction 
+---------------+----------+---------------------+----------------------
+          2018 | Retail   |               42.91 |                36.56
+          2018 | Shopify  |              188.28 |               192.48
+          2019 | Retail   |               41.97 |                36.83
+          2019 | Shopify  |              177.56 |               183.36
+          2020 | Retail   |               40.64 |                36.56
+          2020 | Shopify  |              174.87 |               179.03
+(6 rows)
+
+ weeks | before_sales | after_sales |   change   | pct_change 
+-------+--------------+-------------+------------+------------
+     4 |   2345878357 |  2318994169 |  -26884188 |      -1.15
+    12 |   7126273147 |  6973947753 | -152325394 |      -2.14
+(2 rows)
+
+ calendar_year | before_sales | after_sales | pct_change 
+---------------+--------------+-------------+------------
+          2018 |   5863302538 |  6481106927 |      10.54
+          2019 |   6883386397 |  6862646103 |      -0.30
+          2020 |   7126273147 |  6973947753 |      -2.14
+(3 rows)
+
+   dimension   |     value     | before_sales | after_sales | pct_change | worst_rank 
+---------------+---------------+--------------+-------------+------------+------------
+ age_band      | unknown       |   2764354464 |  2671961443 |      -3.34 |          1
+ age_band      | Middle Aged   |   1164847640 |  1141853348 |      -1.97 |          2
+ age_band      | Retirees      |   2395264515 |  2365714994 |      -1.23 |          3
+ age_band      | Young Adults  |    801806528 |   794417968 |      -0.92 |          4
+ customer_type | Guest         |   2573436301 |  2496233635 |      -3.00 |          1
+ customer_type | Existing      |   3690116427 |  3606243454 |      -2.27 |          2
+ customer_type | New           |    862720419 |   871470664 |       1.01 |          3
+ demographic   | unknown       |   2764354464 |  2671961443 |      -3.34 |          1
+ demographic   | Families      |   2328329040 |  2286009025 |      -1.82 |          2
+ demographic   | Couples       |   2033589643 |  2015977285 |      -0.87 |          3
+ platform      | Retail        |   6906861113 |  6738777279 |      -2.43 |          1
+ platform      | Shopify       |    219412034 |   235170474 |       7.18 |          2
+ region        | ASIA          |   1637244466 |  1583807621 |      -3.26 |          1
+ region        | OCEANIA       |   2354116790 |  2282795690 |      -3.03 |          2
+ region        | SOUTH AMERICA |    213036207 |   208452033 |      -2.15 |          3
+ region        | CANADA        |    426438454 |   418264441 |      -1.92 |          4
+ region        | USA           |    677013558 |   666198715 |      -1.60 |          5
+ region        | AFRICA        |   1709537105 |  1700390294 |      -0.54 |          6
+ region        | EUROPE        |    108886567 |   114038959 |       4.73 |          7
+(19 rows)
+

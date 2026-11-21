@@ -16,15 +16,5 @@ jobs:
       PGPASSWORD: postgres
     steps:
       - uses: actions/checkout@v4
-      - name: Run every case study (schema then solution) on PostgreSQL 16
-        run: |
-          set -e
-          for d in */; do
-            [ -f "$d/schema.sql" ] || continue
-            study=${d%/}
-            psql -c "DROP DATABASE IF EXISTS $(echo $study | tr - _)" -d postgres
-            psql -c "CREATE DATABASE $(echo $study | tr - _)" -d postgres
-            echo "== $study"
-            psql -v ON_ERROR_STOP=1 -q -d "$(echo $study | tr - _)" -f "$d/schema.sql"
-            psql -v ON_ERROR_STOP=1 -q -d "$(echo $study | tr - _)" -f "$d/solution.sql" > /dev/null
-          done
+      - name: Run every case study on PostgreSQL 16 and compare output with expected_output.txt
+        run: ./check.sh

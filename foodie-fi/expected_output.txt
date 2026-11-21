@@ -1,0 +1,144 @@
+ customer_id |   plan_name   | start_date | days_since_previous 
+-------------+---------------+------------+---------------------
+           1 | trial         | 2020-08-01 |                    
+           1 | basic monthly | 2020-08-08 |                   7
+           2 | trial         | 2020-09-20 |                    
+           2 | pro annual    | 2020-09-27 |                   7
+           3 | trial         | 2020-01-13 |                    
+           3 | basic monthly | 2020-01-20 |                   7
+           4 | trial         | 2020-01-17 |                    
+           4 | basic monthly | 2020-01-24 |                   7
+           4 | churn         | 2020-04-21 |                  88
+           5 | trial         | 2020-08-03 |                    
+           5 | basic monthly | 2020-08-10 |                   7
+           6 | trial         | 2020-12-23 |                    
+           6 | basic monthly | 2020-12-30 |                   7
+           6 | churn         | 2021-02-26 |                  58
+           7 | trial         | 2020-02-05 |                    
+           7 | basic monthly | 2020-02-12 |                   7
+           7 | pro monthly   | 2020-05-22 |                 100
+           8 | trial         | 2020-06-11 |                    
+           8 | basic monthly | 2020-06-18 |                   7
+           8 | pro monthly   | 2020-08-03 |                  46
+(20 rows)
+
+ customers 
+-----------
+      1000
+(1 row)
+
+ month_start | trials 
+-------------+--------
+ 2020-01-01  |     88
+ 2020-02-01  |     68
+ 2020-03-01  |     94
+ 2020-04-01  |     81
+ 2020-05-01  |     88
+ 2020-06-01  |     79
+ 2020-07-01  |     89
+ 2020-08-01  |     88
+ 2020-09-01  |     87
+ 2020-10-01  |     79
+ 2020-11-01  |     75
+ 2020-12-01  |     84
+(12 rows)
+
+ plan_id |   plan_name   | events 
+---------+---------------+--------
+       1 | basic monthly |      8
+       2 | pro monthly   |     60
+       3 | pro annual    |     63
+       4 | churn         |     71
+(4 rows)
+
+ churned_customers | pct_of_all 
+-------------------+------------
+               307 |       30.7
+(1 row)
+
+ churned_after_trial | pct_of_all 
+---------------------+------------
+                  92 |          9
+(1 row)
+
+   plan_name   | customers | pct_of_all 
+---------------+-----------+------------
+ basic monthly |       546 |       54.6
+ pro monthly   |       325 |       32.5
+ churn         |        92 |        9.2
+ pro annual    |        37 |        3.7
+(4 rows)
+
+   plan_name   | customers | pct  
+---------------+-----------+------
+ trial         |        19 |  1.9
+ basic monthly |       224 | 22.4
+ pro monthly   |       326 | 32.6
+ pro annual    |       195 | 19.5
+ churn         |       236 | 23.6
+(5 rows)
+
+ annual_in_2020 
+----------------
+            195
+(1 row)
+
+ avg_days_to_annual | customers 
+--------------------+-----------
+              104.6 |       258
+(1 row)
+
+ bucket_days | customers | avg_days 
+-------------+-----------+----------
+ 0-29        |        48 |      9.5
+ 30-59       |        25 |     41.8
+ 60-89       |        33 |     70.9
+ 90-119      |        35 |     99.8
+ 120-149     |        43 |    133.0
+ 150-179     |        35 |    161.5
+ 180-209     |        27 |    190.3
+ 210-239     |         4 |    224.3
+ 240-269     |         5 |    257.2
+ 270-299     |         1 |    285.0
+ 300-329     |         1 |    327.0
+ 330-359     |         1 |    346.0
+(12 rows)
+
+ downgrades_2020 
+-----------------
+               0
+(1 row)
+
+ customer_id |   plan_name   | payment_date | amount | payment_order 
+-------------+---------------+--------------+--------+---------------
+           1 | basic monthly | 2020-08-08   |   9.90 |             1
+           1 | basic monthly | 2020-09-08   |   9.90 |             2
+           1 | basic monthly | 2020-10-08   |   9.90 |             3
+           1 | basic monthly | 2020-11-08   |   9.90 |             4
+           1 | basic monthly | 2020-12-08   |   9.90 |             5
+           2 | pro annual    | 2020-09-27   | 199.00 |             1
+          13 | basic monthly | 2020-12-22   |   9.90 |             1
+          15 | pro monthly   | 2020-03-24   |  19.90 |             1
+          15 | pro monthly   | 2020-04-24   |  19.90 |             2
+          16 | basic monthly | 2020-06-07   |   9.90 |             1
+          16 | basic monthly | 2020-07-07   |   9.90 |             2
+          16 | basic monthly | 2020-08-07   |   9.90 |             3
+          16 | basic monthly | 2020-09-07   |   9.90 |             4
+          16 | basic monthly | 2020-10-07   |   9.90 |             5
+          16 | pro annual    | 2020-10-21   | 189.10 |             6
+          18 | pro monthly   | 2020-07-13   |  19.90 |             1
+          18 | pro monthly   | 2020-08-13   |  19.90 |             2
+          18 | pro monthly   | 2020-09-13   |  19.90 |             3
+          18 | pro monthly   | 2020-10-13   |  19.90 |             4
+          18 | pro monthly   | 2020-11-13   |  19.90 |             5
+          18 | pro monthly   | 2020-12-13   |  19.90 |             6
+          19 | pro monthly   | 2020-06-29   |  19.90 |             1
+          19 | pro monthly   | 2020-07-29   |  19.90 |             2
+          19 | pro annual    | 2020-08-29   | 199.00 |             3
+(24 rows)
+
+ payment_rows | paying_customers | total_2020 
+--------------+------------------+------------
+         4446 |              891 |  101881.60
+(1 row)
+
